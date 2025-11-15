@@ -619,13 +619,14 @@ Frage: ${prompt}`;
         }
     }
 
-    cleanJsonResponse(text) {
-        let cleaned = text;
-        cleaned = cleaned.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-        cleaned = cleaned.replace(/<tool_call>[\s\S]*?<\/think>/g, '');
-        cleaned = cleaned.trim();
-        return cleaned;
-    }
+cleanJsonResponse(text) {
+    let cleaned = text;
+    cleaned = cleaned.replace(/```json\n?/g, '').replace(/```\n?/g, '');
+    cleaned = cleaned.replace(/<think>[\s\S]*?<\/think>/g, ''); // ✅ NEU: Entfernt <think> Tags
+    cleaned = cleaned.replace(/<tool_call>[\s\S]*?<\/tool_call>/g, ''); // ✅ KORRIGIERT: </tool_call> statt </think>
+    cleaned = cleaned.trim();
+    return cleaned;
+}
 
     async validateWithLlama70B(originalQuestion, responses) {
         try {
