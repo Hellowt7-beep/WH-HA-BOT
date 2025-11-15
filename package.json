@@ -1,0 +1,45 @@
+{
+  "name": "wh-ha-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Hausaufgaben Bot mit Multi-KI, OCR und MEGA Integration",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "clean": "node scripts/clean-session.js"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.25.0",
+    "puppeteer": "^19.11.1",
+    "@google/generative-ai": "^0.21.0",
+    "groq-sdk": "^0.8.0",
+    "megajs": "^1.2.1",
+    "express": "^4.21.1",
+    "qrcode": "^1.5.3",
+    "qrcode-terminal": "^0.12.0",
+    "dotenv": "^16.4.5",
+    "sharp": "^0.33.5",
+    "node-fetch": "^3.3.2",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "^131.0.0",
+    "puppeteer-core": "^23.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "hausaufgaben",
+    "ki",
+    "gemini",
+    "ocr",
+    "mega",
+    "multi-ai"
+  ],
+  "author": "",
+  "license": "MIT"
+}
